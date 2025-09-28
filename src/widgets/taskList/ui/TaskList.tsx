@@ -4,7 +4,8 @@ import { EFilter, useTasks } from '../model/useTask';
 import styles from './TaskList.module.css';
 
 export default function TaskList() {
-    const { tasks, filter, setFilter, removeTask } = useTasks();
+    const { tasks, filter, setFilter, removeTask, addTask, toggleStatus } =
+        useTasks();
     const handleFilter = (): void => {
         if (filter === EFilter.ALL) {
             setFilter(EFilter.COMPlETED);
@@ -19,23 +20,22 @@ export default function TaskList() {
         }
     };
 
-    const handleRemove = (taskId: string): void => {
-        removeTask(taskId);
-    };
-
     return (
         <>
-            <Button onClick={handleFilter}>{filter}</Button>
+            <Button onClick={handleFilter} label={filter} />
 
             <div className={styles.list}>
                 {tasks.map((task) => (
                     <RemovableTaskCard
                         key={task.id}
                         task={task}
-                        onRemove={handleRemove}
+                        onRemove={removeTask}
+                        onToggleStatus={toggleStatus}
                     />
                 ))}
             </div>
+
+            <Button onClick={addTask} label="add" />
         </>
     );
 }
