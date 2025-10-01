@@ -13,12 +13,12 @@ export const TaskCard = React.memo(({ task, onToggleStatus }: Props) => {
             <h1>{task.title}</h1>
 
             <div>
-                <label htmlFor="completeCheckbox">completed</label>
+                <label htmlFor={`checkbox_${task.id}`}>completed</label>
 
                 <input
-                    id="completeCheckbox"
+                    id={`checkbox_${task.id}`}
                     type="checkbox"
-                    onClick={onToggleStatus}
+                    onChange={onToggleStatus}
                     checked={task.completed}
                 />
             </div>
