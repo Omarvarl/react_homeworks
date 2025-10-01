@@ -3,7 +3,7 @@ import { type Task } from 'entities/task/model/types';
 
 export enum EFilter {
     ALL = 'all',
-    COMPlETED = 'completed',
+    COMPLETED = 'completed',
     INCOMPLETE = 'incomplete',
 }
 
@@ -46,7 +46,7 @@ export function useTasks(): IUseTask {
         }
 
         return tasks.filter(({ completed }) => {
-            return filter === EFilter.COMPlETED
+            return filter === EFilter.COMPLETED
                 ? completed === true
                 : completed === false;
         });
@@ -59,7 +59,9 @@ export function useTasks(): IUseTask {
     const addTask = useCallback(() => {
         setTasks((oldValue) => {
             const newTaskId = oldValue.length
-                ? (parseInt(oldValue[oldValue.length - 1].id) + 1).toString()
+                ? (
+                      parseInt(oldValue[oldValue.length - 1].id, 10) + 1
+                  ).toString()
                 : '1';
 
             return [

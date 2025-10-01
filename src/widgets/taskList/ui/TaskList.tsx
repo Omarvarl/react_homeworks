@@ -8,10 +8,10 @@ export default function TaskList() {
         useTasks();
     const handleFilter = (): void => {
         if (filter === EFilter.ALL) {
-            setFilter(EFilter.COMPlETED);
+            setFilter(EFilter.COMPLETED);
         }
 
-        if (filter === EFilter.COMPlETED) {
+        if (filter === EFilter.COMPLETED) {
             setFilter(EFilter.INCOMPLETE);
         }
 
