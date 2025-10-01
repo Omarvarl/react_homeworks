@@ -3,11 +3,3 @@
     flex-direction: column;
     align-items: center;
 }
-
-.completed {
-    color: #6e6e6e;
-}
-
-.incompleted {
-    color: red;
-}

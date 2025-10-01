@@ -1,14 +1,15 @@
+import React from 'react';
 import styles from './Button.module.css';
 
 type ButtonProps = {
-    children: React.ReactNode;
     onClick: () => void;
+    label: string;
 };
 
-export function Button({ children, onClick }: ButtonProps) {
+export const Button = React.memo(({ onClick, label }: ButtonProps) => {
     return (
         <button onClick={onClick} className={styles.button}>
-            {children}
+            {label}
         </button>
     );
-}
+});

@@ -2,24 +2,30 @@ import { Task } from 'entities/task/model/types';
 import { TaskCard } from 'entities/task/ui/TaskCard';
 import { Button } from 'shared/ui/Button';
 import styles from './RemovableTaskCard.module.css';
+import React, { useCallback } from 'react';
 
 type Props = {
     task: Task;
     onRemove: (taskId: string) => void;
+    onToggleStatus: (taskId: string) => void;
 };
 
-export function RemovableTaskCard({ task, onRemove }: Props) {
-    const handleRemove = (): void => {
-        onRemove(task.id);
-    };
+export const RemovableTaskCard = React.memo(
+    ({ task, onRemove, onToggleStatus }: Props) => {
+        const handleRemove = useCallback((): void => {
+            onRemove(task.id);
+        }, [task.id, onRemove]);
 
-    return (
-        <div className={styles.card}>
-            <TaskCard task={task} />
+        const handleToggleStatus = useCallback(() => {
+            onToggleStatus(task.id);
+        }, [task.id, onToggleStatus]);
 
-            <Button key={task.id} onClick={handleRemove}>
-                remove
-            </Button>
-        </div>
-    );
-}
+        return (
+            <div className={styles.card}>
+                <TaskCard task={task} onToggleStatus={handleToggleStatus} />
+
+                <Button key={task.id} onClick={handleRemove} label="remove" />
+            </div>
+        );
+    },
+);
