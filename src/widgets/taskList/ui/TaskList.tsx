@@ -1,5 +1,5 @@
 import { RemovableTaskCard } from 'features/taskRemove';
-import { Button } from 'shared/ui/Button';
+import { Button } from 'shared/ui';
 import { EFilter, useTasks } from '../model/useTask';
 import styles from './TaskList.module.css';
 
