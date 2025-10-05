@@ -6,8 +6,6 @@ export default defineConfig([
     {
         files: ['./src/**'],
         rules: {
-            'fsd/public-api': 'off',
-            'fsd/no-public-api-sidestep': 'off',
             'fsd/insignificant-slice': 'off',
         },
     },

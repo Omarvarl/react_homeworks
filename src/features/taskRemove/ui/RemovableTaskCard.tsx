@@ -1,5 +1,5 @@
-import { Task } from 'entities/task/model/types';
-import { TaskCard } from 'entities/task/ui/TaskCard';
+import { Task } from 'entities/task';
+import { TaskCard } from 'entities/task';
 import { Button } from 'shared/ui/Button';
 import styles from './RemovableTaskCard.module.css';
 import React, { useCallback } from 'react';

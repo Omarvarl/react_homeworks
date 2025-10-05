@@ -1,4 +1,4 @@
-import TaskList from 'widgets/taskList/ui/TaskList';
+import { TaskList } from 'widgets/taskList';
 
 export function TaskPage() {
     return (
