@@ -1,13 +1,13 @@
 import { Task } from 'entities/task';
 import { TaskCard } from 'entities/task';
-import { Button } from 'shared/ui/Button';
+import { Button } from 'shared/ui';
 import styles from './RemovableTaskCard.module.css';
 import React, { useCallback } from 'react';
 
 type Props = {
     task: Task;
-    onRemove: (taskId: string) => void;
-    onToggleStatus: (taskId: string) => void;
+    onRemove: (taskId: number) => void;
+    onToggleStatus: (taskId: number) => void;
 };
 
 export const RemovableTaskCard = React.memo(
