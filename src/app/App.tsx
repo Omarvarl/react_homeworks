@@ -1,4 +1,4 @@
-import { TaskPage } from 'pages/tasks/ui/TaskPage';
+import { TaskPage } from 'pages/tasks';
 
 export function App() {
     return <TaskPage />;

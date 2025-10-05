@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react';
-import { type Task } from 'entities/task/model/types';
+import { type Task } from 'entities/task';
 
 export enum EFilter {
     ALL = 'all',
