@@ -10,7 +10,7 @@ type Props = {
 export const TaskCard = React.memo(({ task, onToggleStatus }: Props) => {
     return (
         <div className={styles.card}>
-            <h1>{task.title}</h1>
+            <h1>{task.todo}</h1>
 
             <div>
                 <label htmlFor={`checkbox_${task.id}`}>completed</label>
