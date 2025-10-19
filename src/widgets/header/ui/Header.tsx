@@ -29,6 +29,10 @@ export function Header() {
                     <Link href="/tasks" sx={{ mx: 1 }}>
                         Задачи
                     </Link>
+
+                    <Link href="/refExamples" sx={{ mx: 1 }}>
+                        Примеры ref
+                    </Link>
                 </Box>
             </Toolbar>
         </AppBar>
