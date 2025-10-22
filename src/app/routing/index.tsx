@@ -5,6 +5,10 @@ import { RegistrationPage } from 'pages/registration';
 import { HomePage } from 'pages/home';
 import { SubscriptionPage } from 'pages/subscription';
 import { RefExamples } from 'pages/refExamples';
+import { ProtectedRoute } from './ProtectedRoute';
+import { LoginPage } from 'pages/login';
+import { ProfilePage } from 'pages/profile';
+import { PublicPage } from 'pages/public';
 
 export const router = createBrowserRouter([
     {
@@ -12,8 +16,25 @@ export const router = createBrowserRouter([
         element: <App />,
         children: [
             {
-                index: true,
-                element: <HomePage />,
+                element: <ProtectedRoute />,
+                children: [
+                    {
+                        index: true,
+                        element: <HomePage />,
+                    },
+                    {
+                        path: '/profile',
+                        element: <ProfilePage />,
+                    },
+                ],
+            },
+            {
+                path: 'login',
+                element: <LoginPage />,
+            },
+            {
+                path: 'public',
+                element: <PublicPage />,
             },
             {
                 path: 'registration',
