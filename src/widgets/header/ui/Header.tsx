@@ -1,6 +1,9 @@
 import { AppBar, Box, Link, Toolbar, Typography } from '@mui/material';
+import { useAuth } from 'features/auth';
 
 export function Header() {
+    const { accessToken } = useAuth();
+
     return (
         <AppBar
             position="static"
@@ -18,20 +21,14 @@ export function Header() {
                 </Link>
 
                 <Box component="nav" sx={{ ml: 'auto' }}>
-                    <Link href="/registration" sx={{ mx: 1 }}>
-                        Регистрация
-                    </Link>
+                    {accessToken ? (
+                        <Link href="/profile" sx={{ mx: 1 }}>
+                            Профиль
+                        </Link>
+                    ) : null}
 
-                    <Link href="/subscription" sx={{ mx: 1 }}>
-                        Подписка
-                    </Link>
-
-                    <Link href="/tasks" sx={{ mx: 1 }}>
-                        Задачи
-                    </Link>
-
-                    <Link href="/refExamples" sx={{ mx: 1 }}>
-                        Примеры ref
+                    <Link href="/public" sx={{ mx: 1 }}>
+                        Публичная
                     </Link>
                 </Box>
             </Toolbar>
