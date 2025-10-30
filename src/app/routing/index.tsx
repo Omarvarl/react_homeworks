@@ -4,6 +4,7 @@ import { TaskPage } from 'pages/tasks';
 import { RegistrationPage } from 'pages/registration';
 import { HomePage } from 'pages/home';
 import { SubscriptionPage } from 'pages/subscription';
+import { RefExamples } from 'pages/refExamples';
 
 export const router = createBrowserRouter([
     {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
             {
                 path: 'registration',
                 element: <RegistrationPage />,
+            },
+            {
+                path: 'refExamples',
+                element: <RefExamples />,
             },
             {
                 path: 'subscription',
