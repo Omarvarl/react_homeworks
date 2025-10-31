@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Container, TextField, Typography } from '@mui/material';
 import { ChangeEvent, useRef } from 'react';
 

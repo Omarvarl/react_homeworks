@@ -30,6 +30,10 @@ export function Header() {
                     <Link href="/public" sx={{ mx: 1 }}>
                         Публичная
                     </Link>
+
+                    <Link href="/showcase" sx={{ mx: 1 }}>
+                        PortalShowcase
+                    </Link>
                 </Box>
             </Toolbar>
         </AppBar>

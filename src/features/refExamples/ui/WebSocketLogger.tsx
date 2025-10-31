@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Button, Container, Typography } from '@mui/material';
 import { useCallback, useEffect, useRef } from 'react';
 

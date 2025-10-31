@@ -9,6 +9,7 @@ import { ProtectedRoute } from './ProtectedRoute';
 import { LoginPage } from 'pages/login';
 import { ProfilePage } from 'pages/profile';
 import { PublicPage } from 'pages/public';
+import { PortalShowcase } from 'pages/portalShowcase';
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
                         element: <ProfilePage />,
                     },
                 ],
+            },
+            {
+                path: 'showcase',
+                element: <PortalShowcase />,
             },
             {
                 path: 'login',
