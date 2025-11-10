@@ -34,6 +34,10 @@ export function Header() {
                     <Link href="/showcase" sx={{ mx: 1 }}>
                         PortalShowcase
                     </Link>
+
+                    <Link href="/react19" sx={{ mx: 1 }}>
+                        react 19 examples
+                    </Link>
                 </Box>
             </Toolbar>
         </AppBar>

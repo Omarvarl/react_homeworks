@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { type Task } from 'entities/task';
 import { useGetTasksQuery } from 'features/taskList';

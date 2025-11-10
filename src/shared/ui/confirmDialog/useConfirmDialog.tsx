@@ -1,5 +1,5 @@
 import { createPortal } from 'react-dom';
-import { ConfirmDialog } from './ConfirmDialog.tsx';
+import { ConfirmDialog } from './ConfirmDialog';
 import { useCallback, useState } from 'react';
 import { TConfirmDialog } from 'shared/model/index.js';
 
