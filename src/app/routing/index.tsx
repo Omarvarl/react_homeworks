@@ -10,6 +10,7 @@ import { LoginPage } from 'pages/login';
 import { ProfilePage } from 'pages/profile';
 import { PublicPage } from 'pages/public';
 import { PortalShowcase } from 'pages/portalShowcase';
+import { React19ExamplesPage } from 'pages/react19';
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
             {
                 path: 'showcase',
                 element: <PortalShowcase />,
+            },
+            {
+                path: 'react19',
+                element: <React19ExamplesPage />,
             },
             {
                 path: 'login',

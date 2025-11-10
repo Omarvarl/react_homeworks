@@ -6,17 +6,20 @@ import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
+import reactCompiler from 'eslint-plugin-react-compiler';
 
 export default defineConfig([
     globalIgnores(['dist']),
     {
         files: ['**/*.{ts,tsx}'],
-        plugins: { prettier: prettierPlugin },
+        plugins: {
+            prettier: prettierPlugin,
+            'react-hooks': reactHooks,
+            'react-refresh': reactRefresh,
+        },
         extends: [
             js.configs.recommended,
             tseslint.configs.recommended,
-            reactHooks.configs['recommended-latest'],
-            reactRefresh.configs.vite,
             prettierConfig,
         ],
         languageOptions: {
@@ -24,7 +27,9 @@ export default defineConfig([
             globals: globals.browser,
         },
         rules: {
-            ...prettierPlugin.configs?.recommended['rules'],
+            ...prettierPlugin.configs?.recommended?.rules,
+            ...reactHooks.configs.recommended.rules,
+            ...reactRefresh.configs.vite.rules,
             'no-console': 'warn',
             eqeqeq: 'warn',
             curly: 'warn',
@@ -33,4 +38,5 @@ export default defineConfig([
             'react/react-in-jsx-scope': 'off',
         },
     },
+    reactCompiler.configs.recommended,
 ]);

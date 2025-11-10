@@ -6,10 +6,10 @@ type ButtonProps = {
     label: string;
 };
 
-export const Button = React.memo(({ onClick, label }: ButtonProps) => {
+export const Button = ({ onClick, label }: ButtonProps) => {
     return (
         <button onClick={onClick} className={styles.button}>
             {label}
         </button>
     );
-});
+};
