@@ -1,0 +1,41 @@
+.tooltipContainer {
+    position: absolute;
+    border-radius: 8px;
+    color: white;
+    max-width: 200px;
+    text-align: center;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.bottomPosition {
+    transform: translateX(-50%);
+}
+
+.leftPosition {
+    transform: translate(-100%, -50%);
+}
+
+.rightPosition {
+    transform: translateY(-50%);
+}
+
+.topPosition {
+    transform: translate(-50%, -100%);
+}
+
+.tooltipParent {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.lightTooltip {
+    color: black;
+    background-color: antiquewhite;
+}
+
+.darkTooltip {
+    color: white;
+    background-color: #161616;
+}
